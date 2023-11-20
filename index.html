@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Smash or Pass</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            border: 1px solid #ccc;
+            margin-bottom: 20px;
+        }
+
+        button {
+            font-size: 16px;
+            padding: 10px 20px;
+            margin: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Rock Smash or Pass</h1>
+    <img id="rockImage" src="" alt="Rock Image">
+    <br>
+    <button onclick="smash()">Smash</button>
+    <button onclick="pass()">Pass</button>
+
+    <script>
+        const rockImages = [
+            'rock1.png',
+            'rock2.png',
+            'rock3.png',
+            'rock4.png',
+            'rock5.png',
+            'rock6.png',
+            'rock7.png',
+            'rock8.png',
+            'rock9.png',
+            'rock10.png'
+        ];
+
+        let currentImageIndex = 0;
+
+        function displayNextImage() {
+            const rockImage = document.getElementById('rockImage');
+            rockImage.src = rockImages[currentImageIndex];
+        }
+
+        function smash() {
+            // Handle logic for smashing (e.g., record the user's choice)
+            // You can add your own logic here
+            alert('You smashed the rock!');
+            nextImage();
+        }
+
+        function pass() {
+            // Handle logic for passing (e.g., record the user's choice)
+            // You can add your own logic here
+            alert('You passed on the rock.');
+            nextImage();
+        }
+
+        function nextImage() {
+            currentImageIndex++;
+            if (currentImageIndex >= rockImages.length) {
+                alert('You have rated all rocks!');
+                // You can redirect the user or perform other actions here
+            } else {
+                displayNextImage();
+            }
+        }
+
+        // Display the first image when the page loads
+        displayNextImage();
+    </script>
+</body>
+</html>
